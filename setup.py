@@ -3,6 +3,7 @@
 from distutils.command.build import build
 from distutils.command.install import install
 from distutils.core import Command, setup
+from setuptools import find_packages
 import distutils.sysconfig
 import os
 import os.path
@@ -220,7 +221,7 @@ setup(name='turnin-ng',
       license='GNU General Public License version 2, or (at your option) ' +\
               'any later version',
       scripts=['src/bin/turnincfg', 'src/bin/turnin'],
-      packages=['turninng'],
+      packages=find_packages(),
       package_dir={'turninng':'src/turninng'},
       data_files=data_files,
       cmdclass={'build_infopage': build_infopage, 'build_pdf':build_pdf,
